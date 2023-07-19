@@ -3,22 +3,17 @@
 if [ $rootxfs ]
 then
   mkfs.xfs -f $rootxfs || exit && mount $rootxfs /mnt && mkdir /mnt/boot 
-else
-  echo "Rootxfs partition not added."
-  exit
-fi
 
 if [ $rootbtrfs ]
 then
   mkfs.btrfs -f $rootbtrfs || exit && mount $rootbtrfs /mnt && mkdir /mnt/boot 
-else
-  echo "Rootbtrfs partition not added."
-  exit
 fi
 
 if [ $boot ]
 then
   mkfs.fat -F32 $boot || exit && mount $boot /mnt/boot
+fi
+
 else
   echo "Boot partition not added."
   umount /mnt
