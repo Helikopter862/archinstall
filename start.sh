@@ -4,7 +4,7 @@ if [ $rootxfs ]
 then
   mkfs.xfs -f $rootxfs || exit && mount $rootxfs /mnt && mkdir /mnt/boot 
 else
-  echo "Root partition not added."
+  echo "Rootxfs partition not added."
   exit
 fi
 
@@ -12,7 +12,7 @@ if [ $rootbtrfs ]
 then
   mkfs.btrfs -f $rootbtrfs || exit && mount $rootbtrfs /mnt && mkdir /mnt/boot 
 else
-  echo "Root partition not added."
+  echo "Rootbtrfs partition not added."
   exit
 fi
 
