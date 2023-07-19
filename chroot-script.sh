@@ -108,13 +108,16 @@ pacman --noconfirm -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji
 case $gpu in 
   nvidia)
     pacman -S --noconfirm --needed lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader
+    mkinicpio -P
     ;;
     
   amd)
     pacman -S --noconfirm --needed xf86-video-amdgpu mesa lib32-mesa lib32-vulkan-icd-loader lib32-vulkan-radeon vulkan-icd-loader vulkan-radeon
+    mkinicpio -P
     ;;
    
   *)
     pacman -S --noconfirm xf86-video-amdgpu xf86-video-intel xf86-video-nouveau
+    mkinicpio -P
     ;;
 esac
