@@ -25,3 +25,5 @@ timedatectl set-ntp true
 genfstab -U /mnt >> /mnt/etc/fstab
 curl -L https://raw.githubusercontent.com/Helikopter862/archinstall/main/chroot-script.sh -o /mnt/chroot-script.sh
 arch-chroot /mnt sh chroot-script.sh
+
+reboot
