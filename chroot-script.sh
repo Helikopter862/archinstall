@@ -37,7 +37,7 @@ console-mode max
 editor  yes" > /boot/loader/loader.conf
  
 echo "title  Arch Linux 
-linux  /vmlinuz-linux-zem" > /boot/loader/entries/arch.conf
+linux  /vmlinuz-linux-zen" > /boot/loader/entries/arch.conf
 if [ $cpu ]
 then
   echo "initrd  /$cpu-ucode.img" >> /boot/loader/entries/arch.conf
