@@ -1,24 +1,8 @@
 #!/bin/bash
 
-if [ $rootxfs ]
-then
-  mkfs.xfs -f $rootxfs || exit && mount $rootxfs /mnt && mkdir /mnt/boot 
-
-if [ $rootbtrfs ]
-then
-  mkfs.btrfs -f $rootbtrfs || exit && mount $rootbtrfs /mnt && mkdir /mnt/boot 
-fi
-
-if [ $boot ]
-then
-  mkfs.fat -F32 $boot || exit && mount $boot /mnt/boot
-fi
-
-else
-  echo "Boot partition not added."
-  umount /mnt
-  exit
-fi
+mkfs.xfs -f /dev/nvme0n1p2 || exit && mount /dev/nvme0n1p2 /mnt && mkdir -p /mnt/boot /mnt/media/data
+mkfs.fat -F32 /dev/nvme0n1p1 || exit && mount /dev/nvme0n1p1 /mnt/boot
+mount /dev/sda1 /mnt/media/data || exit
 
 pacstrap /mnt base linux-zen linux-zen-headers linux-firmware || exit
 timedatectl set-ntp true
