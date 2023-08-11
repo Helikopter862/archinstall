@@ -81,6 +81,7 @@ curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/p
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/launch.sh" -o /home/karol/.config/polybar/launch.sh
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/rofi/config.rasi" -o /home/karol/.config/rofi/config.rasi
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol/.config/sxhkd/sxhkdrc
+chown -R karol /home/karol/.config
 
 echo "exec bspwm &
 bash /home/karol/.config/polybar/launch.sh &
