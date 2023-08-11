@@ -73,10 +73,7 @@ sudo mkinitcpio -P
 
 mkdir -p ~/.config/bspwm/
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-mkdir -p ~/.config/sxhkd/
-mkdir -p ~/.config/alacritty
-mkdir -p ~/.config/polybar
-mkdir -p ~/.config/rofi
+mkdir -p /home/karol/.config/alacritty /home/karol/.config/polybar /home/karol/.config/rofi
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol.config/sxhkd/sxhkdrc
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/alacritty/alacritty.yml" -o /home/karol/.config/alacritty/alacritty.yml
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/config.ini" -o /home/karol/.config/polybar/config.ini
