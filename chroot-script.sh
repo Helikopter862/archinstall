@@ -80,3 +80,47 @@ curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/p
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/launch.sh" -o /home/karol/.config/polybar/launch.sh
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/rofi/config.rasi" -o /home/karol/.config/rofi/config.rasi
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol/.config/sxhkd/sxhkdrc
+
+echo "#!/bin/sh
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+# gnome
+# export XDG_SESSION_TYPE=x11
+# export GDK_BACKEND=x11
+# exec gnome-session
+#
+# bspwm
+
+exec bspwm &
+bash /home/karol/.config/polybar/launch.sh &
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc" > /home/karol/.xinitrc
