@@ -73,6 +73,7 @@ sudo mkinitcpio -P
 
 mkdir -p ~/.config/bspwm/
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+nvim ~/.config/bspwm/bspwmrc
 mkdir -p /home/karol/.config/alacritty /home/karol/.config/polybar /home/karol/.config/rofi /home/karol/.config/sxhkd
 
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/alacritty/alacritty.yml" -o /home/karol/.config/alacritty/alacritty.yml
