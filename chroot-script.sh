@@ -43,7 +43,7 @@ Target = systemd
 [Action]
 Description = Gracefully upgrading systemd-boot...
 When = PostTransaction
-Exec = /usr/bin/systemctl restart systemd-boot-update.service" > /etc/pacman.d/hooks/100-systemd-boot.hook
+Exec = /usr/bin/systemctl restart systemd-boot-update.service" > /etc/pacman.d/hooks/95-systemd-boot.hook
 
 if ! [ $rootpw ]
 then
@@ -68,14 +68,16 @@ sed -i "/^#ParallelDownloads/cParallelDownloads = 5" /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 sudo pacman -Syu
 
-pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader neofetch htop mpv bspwm sxhkd polybar alacritty rofi feh thunar unzip flameshot
+pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader ttf-jetbrains-mono-nerd neofetch htop mpv bspwm sxhkd polybar alacritty rofi feh thunar unzip flameshot
 sudo mkinitcpio -P
 
 mkdir -p ~/.config/bspwm/
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 mkdir -p /home/karol/.config/alacritty /home/karol/.config/polybar /home/karol/.config/rofi /home/karol/.config/sxhkd
-curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol.config/sxhkd/sxhkdrc
+chown -R karol /home/karol/.config
+
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/alacritty/alacritty.yml" -o /home/karol/.config/alacritty/alacritty.yml
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/config.ini" -o /home/karol/.config/polybar/config.ini
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/launch.sh" -o /home/karol/.config/polybar/launch.sh
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/rofi/config.rasi" -o /home/karol/.config/rofi/config.rasi
+curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol.config/sxhkd/sxhkdrc
