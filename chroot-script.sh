@@ -78,7 +78,6 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/polybar
 mkdir -p ~/.config/rofi
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol.config/sxhkd/sxhkdrc
-curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.xinitrc" -o /home/karol/.xinitrc
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/alacritty/alacritty.yml" -o /home/karol/.config/alacritty/alacritty.yml
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/config.ini" -o /home/karol/.config/polybar/config.ini
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/launch.sh" -o /home/karol/.config/polybar/launch.sh
