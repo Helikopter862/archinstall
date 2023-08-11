@@ -71,10 +71,9 @@ sudo pacman -Syu
 pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader ttf-jetbrains-mono-nerd xclip neofetch htop mpv bspwm sxhkd polybar alacritty rofi feh thunar unzip flameshot
 sudo mkinitcpio -P
 
-mkdir -p ~/.config/bspwm/
-cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-nvim ~/.config/bspwm/bspwmrc
-mkdir -p /home/karol/.config/alacritty /home/karol/.config/polybar /home/karol/.config/rofi /home/karol/.config/sxhkd
+mkdir -p /home/karol/.config/bspwm  /home/karol/.config/alacritty /home/karol/.config/polybar /home/karol/.config/rofi /home/karol/.config/sxhkd
+cp /usr/share/doc/bspwm/examples/bspwmrc /home/karol/.config/bspwm/bspwmrc
+nvim /home/karol/.config/bspwm/bspwmrc
 
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/alacritty/alacritty.yml" -o /home/karol/.config/alacritty/alacritty.yml
 curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.config/polybar/config.ini" -o /home/karol/.config/polybar/config.ini
