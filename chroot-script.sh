@@ -75,5 +75,5 @@ mkdir -p ~/.config/bspwm/
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 nvim ~/.config/bspwm/bspwmrc
 mkdir -p ~/.config/sxhkd/
-curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o .config/sxhkd/sxhkdrc
-curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.xinitrc" -o .xinitrc
+curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/sxhkdrc" -o /home/karol.config/sxhkd/sxhkdrc
+curl -L "https://raw.githubusercontent.com/Helikopter862/dotfiles/main/.xinitrc" -o /home/karol/.xinitrc
