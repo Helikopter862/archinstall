@@ -49,15 +49,18 @@ if ! [ $rootpw ]
 then
   rootpw="root"
 fi
-
+if ! [ $username ]
+then
+  username="user"
+fi
 if ! [ $userpw ]
 then
   userpw="user"
 fi
 
 echo "root:$rootpw" | chpasswd
-useradd -mg wheel karol
-echo "karol:$userpw" | chpasswd
+useradd -mg wheel $username
+echo "$username:$userpw" | chpasswd
 sed -i "/^# %wheel ALL=(ALL:ALL) ALL/ c%wheel ALL=(ALL:ALL) ALL" /etc/sudoers
 
 sed -i "/^#Color/cColor" /etc/pacman.conf
