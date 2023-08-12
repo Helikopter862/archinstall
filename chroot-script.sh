@@ -84,4 +84,4 @@ chown -R karol /home/karol/.config
 
 echo "exec bspwm &
 bash /home/karol/.config/polybar/launch.sh &
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc" > /home/karol/.xinitrc
+sxhkd -c /home/karol/.config/sxhkd/sxhkdrc" > /home/karol/.xinitrc
