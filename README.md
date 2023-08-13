@@ -1,1 +1,1 @@
-A copy of github.com/miguelrcborges/archinstallscript configured for personal preference.
+Inspired on `https://github.com/miguelrcborges/archinstallscript`, but configured for presonal preference.
