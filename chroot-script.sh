@@ -5,13 +5,10 @@ hwclock --systohc
 sed -i "/^#en_US.UTF-8/ cen_US.UTF-8 UTF-8" /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-
 echo archlinux >> /etc/hostname
 
-pacman --noconfirm -Sy neovim base-devel git
-pacman --noconfirm -S networkmanager
+pacman pacman --noconfirm --needed -S neovim base-devel git networkmanager intel-ucode
 systemctl enable NetworkManager
-pacman --noconfirm -S intel-ucode
 
 bootctl install
 mkdir -p /boot/loader/entries /etc/pacman.d/hooks
