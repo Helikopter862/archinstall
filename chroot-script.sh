@@ -65,5 +65,5 @@ sed -i "/^#ParallelDownloads/cParallelDownloads = 5" /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 sudo pacman -Syu
 
-pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer alsa-utils lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader ttf-jetbrains-mono-nerd xclip maim libxft xterm rofi thunar gvfs htop mpv feh neofetch unzip
+pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer alsa-utils lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader ttf-jetbrains-mono-nerd xclip maim libxft xterm rofi thunar htop mpv feh neofetch unzip
 sudo mkinitcpio -P
