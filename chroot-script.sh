@@ -7,8 +7,8 @@ locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo archlinux >> /etc/hostname
 
-pacman --noconfirm --needed -S neovim base-devel git intel-ucode
-systemctl enable systemd-networkd
+pacman --noconfirm --needed -S neovim base-devel git networkmanager intel-ucode
+systemctl enable NetworkManager
 
 bootctl install
 mkdir -p /boot/loader/entries /etc/pacman.d/hooks
