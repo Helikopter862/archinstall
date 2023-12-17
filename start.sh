@@ -10,6 +10,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 curl -L https://raw.githubusercontent.com/Helikopter862/archinstall/main/chroot-script.sh -o /mnt/chroot-script.sh
 arch-chroot /mnt sh chroot-script.sh
 
-cp -r /etc/systemd/network /mnt/etc/systemd/network
-
 reboot
