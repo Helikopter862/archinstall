@@ -14,7 +14,7 @@ bootctl install
 mkdir -p /boot/loader/entries /etc/pacman.d/hooks
 
 echo "default  arch.conf 
-timeout  4 
+timeout  10 
 console-mode max 
 editor  yes" > /boot/loader/loader.conf
  
