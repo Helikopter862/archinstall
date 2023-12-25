@@ -14,7 +14,7 @@ bootctl install
 mkdir -p /boot/loader/entries /etc/pacman.d/hooks
 
 echo "default  arch.conf 
-timeout  4 
+timeout  10 
 console-mode max 
 editor  yes" > /boot/loader/loader.conf
  
@@ -65,5 +65,5 @@ sed -i "/^#ParallelDownloads/cParallelDownloads = 5" /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 sudo pacman -Syu
 
-pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader ttf-jetbrains-mono-nerd xclip maim libxft rofi thunar gvfs htop mpv feh neofetch zip unzip
+pacman --noconfirm --needed -S xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pipewire lib32-pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pulsemixer lib32-libglvnd lib32-nvidia-utils lib32-vulkan-icd-loader libglvnd nvidia-dkms nvidia-settings vulkan-icd-loader ttf-jetbrains-mono-nerd xclip maim libxft rofi thunar gvfs htop mpv feh neofetch zip unzip clang
 sudo mkinitcpio -P
