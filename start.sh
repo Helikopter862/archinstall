@@ -2,7 +2,7 @@
 
 mkfs.xfs -f /dev/nvme0n1p2 || exit && mount /dev/nvme0n1p2 /mnt && mkdir /mnt/boot 
 mkfs.fat -F32 /dev/nvme0n1p1 || exit && mount /dev/nvme0n1p1 /mnt/boot
-mount --mkdir -t ntfs3 /dev/sda1 /mnt/media/data || exit
+mount --mkdir /dev/sda1 /mnt/media/data || exit
 
 pacstrap /mnt base linux-zen linux-zen-headers linux-firmware || exit
 timedatectl set-ntp true
